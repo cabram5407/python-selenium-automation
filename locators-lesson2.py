@@ -35,6 +35,10 @@ driver.find_element(By.XPATH, "//input[@name='field-keywords']")
 driver.find_element(By.XPATH,"//a[@class='nav-a  ' and @href='/gp/bestsellers/?ref_=nav_cs_bestsellers']")
 driver.find_element(By.XPATH, "//a[text()='Best Sellers' and @class='nav-a   ']")
 
+driver.find_element(By.XPATH, "*[@class=nav-a   ' and @href='gp/bestsellers/?ref_=nav_cs_bestsellers']")
+
+
+
 
 
 
