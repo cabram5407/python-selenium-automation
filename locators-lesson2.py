@@ -31,11 +31,14 @@ driver.fine_element(By.XPATH, "//img[@alt='All fashion']")
 driver.find_element(By.XPATH, "(//input[@placeholder='Search Amazon']")
 driver.find_element(By.XPATH, "//input[@name='field-keywords']")
 
-#When you use attributes you can place them in any order to narrow the search:
+#When you use multiple attributes you can place them in any order to narrow the search:
 driver.find_element(By.XPATH,"//a[@class='nav-a  ' and @href='/gp/bestsellers/?ref_=nav_cs_bestsellers']")
+
+#identifying with text only
 driver.find_element(By.XPATH, "//a[text()='Best Sellers' and @class='nav-a   ']")
 
-driver.find_element(By.XPATH, "*[@class=nav-a   ' and @href='gp/bestsellers/?ref_=nav_cs_bestsellers']")
+#Wildcard which searches only the attribute
+driver.find_element(By.XPATH, "//*[@class=nav-a   ' and @href='gp/bestsellers/?ref_=nav_cs_bestsellers']")
 
 
 

@@ -1,3 +1,4 @@
+#Default settings for all test automation
 from IPython.utils.coloransi import value
 from selenium import webdriver
 from selenium.webdriver.chrome.webdriver import WebDriver
@@ -13,38 +14,39 @@ service = Service(driver_path)
 driver: WebDriver = webdriver.Chrome(service=service)
 driver.maximize_window()
 
-driver.get('https://www.https://www.amazon.com/ap/signin?openid.pape.max_auth_age=0&openid.return_to=https%3A%2F%2Fwww.amazon.com%2F%3Fref_%3Dnav_ya_signin&openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.assoc_handle=usflex&openid.mode=checkid_setup&openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0/')
+
+#Practice with locators portion of homework
+driver.get("https://www.amazon.com/")
 
 #Amazon logo
-driver.find_element(By.XPATH,"//a[@aria-label='Amazon']")
+driver.find_element(By.XPATH, "//i[@class='a-icon a-icon-logo']")
 #Email field
-driver.find_element(By.ID,'ap_email')
+driver.find_element(By.ID,"ap_email")
 #Continue button
-driver.find_element(By.ID, 'continue')
+driver.find_element(By.ID, "continue")
 #Conditions of use
 driver.find_element(By.XPATH, "//a[@href='/gp/help/customer/display.html/ref=ap_signin_notification_condition_of_use?ie=UTF8&nodeId=508088']")
 #Privacy notice
 driver.find_element(By.XPATH, "//a[@href='/gp/help/customer/display.html/ref=ap_signin_notification_privacy_notice?ie=UTF8&nodeId=468496']")
 #Need help
-driver.find_element(By.XPATH, "//a[@class='a-expander-prompt']")
+driver.find_element(By.XPATH, "//span[@class='a-expander-prompt']")
 #Forgot password link
-driver.find_element(By.ID, 'auth-fpp-link-bottom')
+driver.find_element(By.ID, "auth-fpp-link-bottom")
 #Other issues with sign-in
-driver.find_element(By.ID,'ap-other-signin-issues-link')
+driver.find_element(By.ID,"ap-other-signin-issues-link")
 #Create Amazon account
-driver.find_element(By.ID,'createAccountSubmit')
+driver.find_element(By.ID,"createAccountSubmit")
 
-#Test Case to navigate sign-in page
+#Test Case #1
 #Open Target page
-driver.get('https://www.target.com/')
+driver.get("https://www.target.com/")
 
 #Click Sign-in button
-driver.find_element(By.XPATH, "//a[@class='sc-58ad44c0-3 kwbrXj h-margin-r-x3']").click()
+driver.find_element(By.XPATH, "//span[@class='sc-58ad44c0-3 kwbrXj h-margin-r-x3']").click()
 
 #Click sign-in from side navigation
-driver.find_element(By.XPATH, "//a[@class='sc-859e7637-0 hHZPQy']").click()
-
+driver.find_element(By.XPATH, "//span[@class='sc-859e7637-0 hHZPQy']").click()
 #Verify sign-in page opened
-actual_result = driver.find_element(By.XPATH, "//a[@class='Sign into your Target account']").text
+actual_result = driver.find_element(By.XPATH, ("//h1[@class='sc-fe064f5c-0 sc-315b8ab9-2 WObnm gClYfs']").text
 expected_result = 'Sign into your Target account'
 
