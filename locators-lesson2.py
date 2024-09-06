@@ -26,20 +26,20 @@ driver.fine_element(By.ID, value 'twotabsearchtextbox')
 driver.find_element(By.ID, value 'nav-logo-sprites')
 
 #When there is no ID present use relative XPATH that has one attribute and name:
-#XPath ="//tagname[@attribute='value']
+#XPath ="//tagname[@attribute='value']"
 driver.fine_element(By.XPATH, "//img[@alt='All fashion']")
 driver.find_element(By.XPATH, "(//input[@placeholder='Search Amazon']")
 driver.find_element(By.XPATH, "//input[@name='field-keywords']")
 
-#When you use multiple attributes you can place them in any order to narrow the search:
+#Multiple attributes in any order to narrow the search:
 driver.find_element(By.XPATH,"//a[@class='nav-a  ' and @href='/gp/bestsellers/?ref_=nav_cs_bestsellers']")
 
-#identifying with text only
+#identifying with text and attribute
 driver.find_element(By.XPATH, "//a[text()='Best Sellers' and @class='nav-a   ']")
 
-#Wildcard which searches only the attribute
+#Wildcard search only the attribute or text, useful if you don't know tag value.
 driver.find_element(By.XPATH, "//*[@class=nav-a   ' and @href='gp/bestsellers/?ref_=nav_cs_bestsellers']")
-
+driver.find_element(By.XPATH, "//*[text()='Best Sellers' and @class='nav-a   ']")
 
 
 
