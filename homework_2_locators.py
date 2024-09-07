@@ -39,12 +39,15 @@ driver.find_element(By.ID,'createAccountSubmit')
 driver.get('https://www.target.com/')
 
 #Click Sign-in button
-driver.find_element(By.XPATH, "//a[@class='sc-58ad44c0-3 kwbrXj h-margin-r-x3']").click()
+driver.find_element(By.XPATH, "//*[@data-test=@web/Accounting']").click()
 
 #Click sign-in from side navigation
-driver.find_element(By.XPATH, "//a[@class='sc-859e7637-0 hHZPQy']").click()
+driver.find_element(By.XPATH, "//*[@data-test='accountNav-signIn']").click()
 
 #Verify sign-in page opened
-actual_result = driver.find_element(By.XPATH, "//a[@class='Sign into your Target account']").text
-expected_result = 'Sign into your Target account'
+expected='Sign into your Target account'
+actual = driver.find_element(By.XPATH, "//h1/span").text
+assert expected == actual, f'Expected {expected} did not match actual {actual}'                                 ")
 
+driver.find_element(By.XPATH, "//span[text()='Sign into your Target account']")
+driver.find_element(By.ID, 'login')
