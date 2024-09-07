@@ -50,4 +50,6 @@ actual = driver.find_element(By.XPATH, "//h1/span").text
 assert expected == actual, f'Expected {expected} did not match actual {actual}'                                 ")
 
 driver.find_element(By.XPATH, "//span[text()='Sign into your Target account']")
+
+#Login button is shown
 driver.find_element(By.ID, 'login')
