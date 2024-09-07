@@ -41,6 +41,9 @@ driver.find_element(By.XPATH, "//a[text()='Best Sellers' and @class='nav-a   ']"
 driver.find_element(By.XPATH, "//*[@class=nav-a   ' and @href='gp/bestsellers/?ref_=nav_cs_bestsellers']")
 driver.find_element(By.XPATH, "//*[text()='Best Sellers' and @class='nav-a   ']")
 
+#Linking to a parent element and then child elements
+driver.find_element(By.XPATH, "//div[@id='nav-main']//a[text()='Best Sellers']")
+
 
 
 
