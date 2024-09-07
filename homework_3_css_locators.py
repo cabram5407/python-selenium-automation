@@ -22,12 +22,12 @@ driver.find_element(By.XPATH, "//*[text()='Account & Lists' and @class='nav-line
 driver.find_element(By.CSS_SELECTOR, "#createAccountSubmit")
 
 driver.find_element(By.XPATH, "//h1[@class='a-spacing-small')
-driver.find_element(By.CSS_SELECTOR, "#ap_customer_name")
-driver.find_element(By.CSS_SELECTOR, "#ap_email")
-driver.find_element(By.CSS_SELECTOR, "#ap_password")
+driver.find_element(By.CSS_SELECTOR, "input#ap_customer_name.ap_customer_name_context_message_section")
+driver.find_element(By.CSS_SELECTOR, "input#ap_email")
+driver.find_element(By.CSS_SELECTOR, "input#ap_password")
 driver.find_element(By.XPATH, "//div[@class='a-alert-content']")
-driver.find_element(By.CSS_SELECTOR, "#ap_password_check")
-driver.find_element(By.CSS_SELECTOR, "#continue")
+driver.find_element(By.CSS_SELECTOR, "input#ap_password_check")
+driver.find_element(By.CSS_SELECTOR, "input#continue")
 
 #Condition of use
 driver.find_element(By.XPATH, "//a[contains(@href, 'ap_register_notification_condition_of_use')]")
