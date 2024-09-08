@@ -52,7 +52,7 @@ actual_result=driver.find_element(By.XPATH, "//h1[text()='Your cart is empty']")
 
 #verify is true but if false it will fail.
 assert expected_result in actual_result, f'Expected {expected_result}, did not match actual {actual_result}'
-print('Test case passed')
+print(actual_result)
 driver.quit()
 
 
@@ -68,6 +68,6 @@ driver.find_element(By.CSS_SELECTOR, "[data-test='accountNav-signIn']").click()
 actual_result = driver.find_element(By.XPATH, "//span[text()='Sign into your Target account']").text
 
 assert expected_result in actual_result, f'{expected_result}, got actual {actual_result}'
-print('Test case passed')
+print(actual_result)
 
 driver.quit()
