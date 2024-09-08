@@ -21,7 +21,7 @@ driver.find_element(By.XPATH, "//*[text()='Account & Lists' and @class='nav-line
 #Click on Creat Account button
 driver.find_element(By.CSS_SELECTOR, "#createAccountSubmit")
 
-driver.find_element(By.XPATH, "//h1[@class='a-spacing-small')
+driver.find_element(By.XPATH, "//h1[@class='a-spacing-small']")
 driver.find_element(By.CSS_SELECTOR, "input#ap_customer_name.ap_customer_name_context_message_section")
 driver.find_element(By.CSS_SELECTOR, "input#ap_email")
 driver.find_element(By.CSS_SELECTOR, "input#ap_password")
@@ -50,7 +50,7 @@ sleep(10)
 actual_result=driver.find_element(By.XPATH, "//h1[text()='Your cart is empty']").text
 
 #verify is true but if false it will fail.
-assert expected_result in actual_result, f'{expected_result}, got actual {actual_result}'
+assert expected_result in actual_result, f'Expected {expected_result}, did not match actual {actual_result}'
 print('Test case passed')
 driver.quit()
 
