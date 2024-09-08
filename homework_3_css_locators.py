@@ -16,34 +16,34 @@ driver.maximize_window()
 driver.get('https://www.amazon.com/')
 
 #From Amazon home page, click on arrow in top navigation
-driver.find_element(By.XPATH, "//*[text()='Account & Lists' and @class='nav-line-2 ']")
+driver.find_element((By.CSS_SELECTOR, ".Account & Lists' and @class='nav-line-2")
 
 #Click on Creat Account button
-driver.find_element(By.CSS_SELECTOR, "#createAccountSubmit")
+driver.find_element(By.ID, "createAccountSubmit")
 
-driver.find_element(By.XPATH, "//h1[@class='a-spacing-small']")
-driver.find_element(By.CSS_SELECTOR, "#ap_customer_name.ap_customer_name_context_message_section")
-driver.find_element(By.CSS_SELECTOR, "#ap_email")
-driver.find_element(By.CSS_SELECTOR, "#ap_password")
-driver.find_element(By.XPATH, "//div[@class='a-alert-content']")
-driver.find_element(By.CSS_SELECTOR, "#ap_password_check")
-driver.find_element(By.CSS_SELECTOR, "#continue")
+driver.find_element((By.CSS_SELECTOR, "h1.a-spacing-small")
+driver.find_element(By.ID, "ap_customer_name")
+driver.find_element(By.ID, "ap_email")
+driver.find_element(By.ID, "ap_password")
+driver.find_element((By.CSS_SELECTOR, "div.a-alert-content")
+driver.find_element(By.ID, "ap_password_check")
+driver.find_element(By.ID, "continue")
 
 #Condition of use
-driver.find_element(By.XPATH, "//a[contains(@href, 'ap_register_notification_condition_of_use')]")
+driver.find_element(By.CSS_SELECTOR, "[href*='ap_register_notification_condition_of_use')]")
 
 #Privacy notice
-driver.find_element(By.XPATH, "//a[contains(@href,'ap_register_notification_privacy_notice')]")
+driver.find_element(By.CSS_SELECTOR, "[href*='ap_register_notification_privacy_notice')]")
 
 #Already have an account sign-in
-driver.find_element(By.XPATH, "//a[@class='a-link-emphasis']")
+driver.find_element(By.CSS_SELECTOR, "a.a-link-emphasis")
 
 
 #Target test case that opens Target.com, clicks on cart icon and verify empty cart message
 driver.get('https://www.target.com/')
 
 #Click on shopping cart icon"
-driver.find_element(By.XPATH, "//div[@data-test='@web/CartIcon']").click()
+driver.find_element(By.CSS_SELECTOR, "[data-test='@web/CartIcon']").click()
 
 sleep(10)
 
@@ -61,7 +61,7 @@ driver.get('https://www.target.com/')
 driver.find_element(By.XPATH, "//span[text()='Sign in']").click()
 
 #side navigation menu to sign-in
-driver.find_element(By.XPATH, "//a[@data-test='accountNav-signIn']").click()
+driver.find_element(By.CSS_SELECTOR, "[data-test='accountNav-signIn']").click()
 
 #verify sign-in form opened
 actual_result = driver.find_element(By.XPATH, "//span[text()='Sign into your Target account']").text
