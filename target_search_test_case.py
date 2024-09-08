@@ -16,21 +16,35 @@ service = Service(driver_path)
 driver: WebDriver = webdriver.Chrome(service=service)
 driver.maximize_window()
 
-#Target test case
+#Target test case that opens Target.com, clicks on cart icon and verify empty cart message
 driver.get('https://www.target.com/')
 
-#Search for text, "Tea"
-driver.find_element(By.ID, 'search').send_keys('tea')
+#Click on shopping cart icon"
+driver.find_element(By.XPATH, "//div[@data-test='@web/CartIcon']").click()
 
-#click on tea
-driver.find_element(By.XPATH,"//button[@data-test='@web/Search/SearchButton']").click()
 sleep(10)
 
-#Verification for result makes sure it goes to the correct page.
-actual_result = driver.find_element(By.XPATH, "//div[@data-test='resultsHeading']").text
-expected_result = 'tea'
+#Verification that cart is empty.
+actual_result=driver.find_element(By.XPATH, "//h1[text()='Your cart is empty']").text
 
 #verify is true but if false it will fail.
-assert expected_result in actual_result, f'{expected_result}, got actual {actual_result}'
+assert expected_result in actual_result, f'Expected {expected_result}, did not match actual {actual_result}'
 print('Test case passed')
 driver.quit()
+
+#Target test case to verify a user log out and user can navigate to sign-in.
+driver.get('https://www.target.com/')
+
+driver.find_element(By.XPATH, "//span[text()='Sign in']").click()
+
+#side navigation menu to sign-in
+driver.find_element(By.XPATH, "//a[@data-test='accountNav-signIn']").click()
+
+#verify sign-in form opened
+actual_result = driver.find_element(By.XPATH, "//span[text()='Sign into your Target account']").text
+
+assert expected_result in actual_result, f'{expected_result}, got actual {actual_result}'
+print('Test case passed')
+
+driver.quit()
+
