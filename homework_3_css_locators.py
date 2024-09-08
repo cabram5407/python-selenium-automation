@@ -55,6 +55,7 @@ assert expected_result in actual_result, f'Expected {expected_result}, did not m
 print('Test case passed')
 driver.quit()
 
+
 #Target test case to verify a user log out and user can navigate to sign-in.
 driver.get('https://www.target.com/')
 
