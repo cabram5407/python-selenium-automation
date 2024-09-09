@@ -1,6 +1,7 @@
 # Created by cabram54 at 9/7/2024
-Feature: # Enter feature name here
-  # Enter feature description here
+Feature:Test Target Cart is Empty
 
-  Scenario: # Enter scenario name here
-    # Enter steps here
+  Scenario: User can confirm that cart is empty
+    Given Open target main page
+    When Click on cart icon
+    Then Verify cart is empty
