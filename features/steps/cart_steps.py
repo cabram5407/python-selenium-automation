@@ -16,14 +16,11 @@ driver.get('https://www.target.com/')
 
 #Click on shopping cart icon"
 driver.find_element(By.CSS_SELECTOR, "[data-test='@web/CartIcon']").click()
+driver.find_element(By.XPATH,"//h1[text()='Your cart is empty']").text
 
-sleep(10)
 
-#Verification that cart is empty.
-actual_result=driver.find_element(By.XPATH, "//h1[text()='Your cart is empty']").text
 
-#verify is true but if false it will fail.
-assert expected_result in actual_result, f'Expected {expected_result}, did not match actual {actual_result}'
+#Verification that cart is empty message is present.
+actual_result=driver.find_element(By.XPATH,"//h1[text()='Your cart is empty']").text
 print(actual_result)
-
 driver.quit()

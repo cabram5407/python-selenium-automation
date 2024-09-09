@@ -25,6 +25,9 @@ driver.find_element(By.CSS_SELECTOR, "[href*='notification_condition_of_use']")
 driver.find_element(By.CSS_SELECTOR, "[class*='search']")
 driver.find_element(By.CSS_SELECTOR, "[id*='search']")
 
+#partial search
+driver.find_element(By.CSS_SELECTOR, "[class*='search']")
+
 # By CSS, from parent => to child, separate by space:
 driver.find_element(By.CSS_SELECTOR, "#legalTextRow [href*='privacy']")
 driver.find_element(By.CSS_SELECTOR, ".a-box-inner #legalTextRow [href*='privacy']")
