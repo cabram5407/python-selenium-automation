@@ -1,30 +1,22 @@
-from selenium import webdriver
 from selenium.webdriver.common.by import By
-from selenium.webdriver.chrome.service import Service
-from webdriver_manager.chrome import ChromeDriverManager
+from behave import given, when, then
 from time import sleep
 
-# get the path to the ChromeDriver executable
-driver_path = ChromeDriverManager().install()
+@given('Open target main page')
+def open_main(context):
+    context.driver.get('https://www.target.com/')
 
-# create a new Chrome browser instance
-service = Service(driver_path)
-driver = webdriver.Chrome(service=service)
-driver.maximize_window()
+@when('Click on sign-in button')
+def sign_in_main(context):
+    context.driver.find_element(By.XPATH, "//span[text()='Sign in']").click()
+
+@when('From side navigation, click sign-in')
+def sign_in_side(context):
+    context.driver.find_element(By.XPATH, "//a[@data-test='accountNav-signIn']").click()
 
 
-#Target test case to verify a user log out and user can navigate to sign-in.
-driver.get('https://www.target.com/')
-
-driver.find_element(By.XPATH, "//span[text()='Sign in']").click()
-
-#side navigation menu to sign-in
-driver.find_element(By.XPATH, "//a[@data-test='accountNav-signIn']").click()
-
-#verify sign-in form opened
-actual_result = driver.find_element(By.XPATH, "//span[text()='Sign into your Target account']").text
-
-assert expected_result in actual_result, f'{expected_result}, got actual {actual_result}'
-print('Test case passed')
-
-driver.quit()
+@then('Verify ign-in form opened')
+def verify_sign_in_form(context):
+    actual_result = context.driver.find_element(By.XPATH, "//span[text()='Sign into your Target account']").text
+    expected_result ='Sign into your Target account'
+    assert expected_result in actual_result, f'Expected {expected_result}, got actual {actual_result}'

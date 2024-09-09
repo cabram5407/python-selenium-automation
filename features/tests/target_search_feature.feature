@@ -5,3 +5,10 @@ Feature:Test Target Cart is Empty
     Given Open target main page
     When Click on cart icon
     Then Verify cart is empty
+
+
+    Scenario: User can verify sign-in form opened
+    Given Open target main page
+    When Click on sign-in button
+    When From side navigation, click sign-in
+    Then Verify ign-in form opened
