@@ -7,9 +7,9 @@ SEARCH_INPUT = (By.NAME, 'q')
 SEARCH_SUBMIT = (By.NAME, 'btnK')
 
 
-@given('Open Google page')
-def open_google(context):
-    context.driver.get('https://www.google.com/')
+@given('Open Target Benefits page')
+def open_benefits(context):
+    context.driver.get('https://www.target.com/')
 
 
 @when('Input {search_word} into search field')
@@ -28,5 +28,5 @@ def click_search_icon(context):
 
 @then('Product results for {search_word} are shown')
 def verify_found_results_text(context, search_word):
-    assert search_word.lower() in context.driver.current_url.lower(), \
+    assert search_word.lower() == context.driver.current_url.lower(), \
         f'Expected query not in {context.driver.current_url.lower()}'

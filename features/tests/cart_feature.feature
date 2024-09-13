@@ -1,6 +1,7 @@
 # Created by cabram54 at 9/7/2024
-Feature: # Enter feature name here
-  # Enter feature description here
+Feature:  Cart empty tests
 
-  Scenario: # Enter scenario name here
-    # Enter steps here
+  Scenario: User can see Cart Empty message
+     Given: Cart empty message
+     When 'Click on cart icon
+     Then Verify Cart Empty message shown
