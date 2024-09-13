@@ -29,3 +29,21 @@
  @when('From side navigation, click sign-in')
      def sign_in_side(context):
          context.driver.find_element(By.XPATH, "//a[@data-test='accountNav-signIn']").click()
+
+
+@then('Verify header has {amount} links')
+def verify_header_links(context, amount):
+    expected_amount = int(amount)
+    links=context.driver,find_elements(By.CSS_SELECTOR,"[data-test*='@web/GlobalHeader/UtilityHeader/']" )
+    assert len(links) == int(amount), f'Expected {amount} links, got {len(links)}'
+
+
+@then ('Verify header is shown')
+def verify_header(context):
+    context.driver.find_element(By.CSS_SELECTOR, "[class*='styles_utilityHeaderContainer']")
+
+
+ @then('Verify header has links')
+ def verify_header_links(context):
+     context.driver.find_elements(By.CSS_SELECTOR, "[data-test*='@web/GlobalHeader/UtilityHeader/']")
+
