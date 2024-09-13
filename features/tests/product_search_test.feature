@@ -1,8 +1,16 @@
 # Created by cabram54 at 9/9/2024
-Scenario Outline: User can search for a product
+
+Feature: Test for Target Search Functionality
+
+Scenario: User can search for a product
     Given Open target main page
-    When Search for {item}
-    Then Verify header is shown
+    When Search for tea
+    Then Verify search results show tea
+
+  Scenario: User can search for a product2
+    Given Open target main page
+    When Search for coffee
+    Then Verify search results show coffee
 
 Scenario Outline: User can search for product
     Given Open target main page
@@ -16,3 +24,14 @@ Scenario Outline: User can search for product
     |sugar        |sugar         |
 
 
+ Scenario: User can see Cart empty message
+    Given Open target main page
+    When Click on cart icon
+    Then Verify cart is empty
+
+
+    Scenario: User can verify sign-in form opened
+    Given Open target main page
+    When Click on sign-in button
+    When From side navigation, click sign-in
+    Then Verify sign-in form shown

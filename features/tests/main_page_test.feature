@@ -1,5 +1,5 @@
 # Created by cabram54 at 9/8/2024
-Feature: # Enter feature name here
+Feature: Main page functionality
   # Enter feature description here
 
   Scenario: # Enter scenario name here

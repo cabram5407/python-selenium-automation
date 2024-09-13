@@ -2,6 +2,11 @@
 Feature:  Cart empty tests
 
   Scenario: User can see Cart Empty message
-     Given: Cart empty message
-     When 'Click on cart icon
+     Given Click on cart icon
+     When Click on cart icon
      Then Verify Cart Empty message shown
+
+    Scenario: Click sign-in button
+     Given Click on sign-in button
+     When From side navigation, click sign-in
+     Then Verify sign-in button shown
