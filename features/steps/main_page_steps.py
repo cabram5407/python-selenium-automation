@@ -46,4 +46,5 @@ def verify_header(context):
  @then('Verify header has links')
  def verify_header_links(context):
      context.driver.find_elements(By.CSS_SELECTOR, "[data-test*='@web/GlobalHeader/UtilityHeader/']")
+     assert len(links) > 0
 
