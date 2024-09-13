@@ -34,7 +34,7 @@
 @then('Verify header has {amount} links')
 def verify_header_links(context, amount):
     expected_amount = int(amount)
-    links=context.driver,find_elements(By.CSS_SELECTOR,"[data-test*='@web/GlobalHeader/UtilityHeader/']" )
+    links=context.driver.find_elements(By.CSS_SELECTOR,"[data-test*='@web/GlobalHeader/UtilityHeader/']" )
     assert len(links) == int(amount), f'Expected {amount} links, got {len(links)}'
 
 
