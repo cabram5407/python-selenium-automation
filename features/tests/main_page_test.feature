@@ -5,6 +5,7 @@ Feature: Tests for main page user interface (UI)
   #Then verify header is shown
 
  Scenario: Verify Target header shown
+  #not common better to count links
     Given Open Target main page
     Then Verify header is shown
     And Verify header has links

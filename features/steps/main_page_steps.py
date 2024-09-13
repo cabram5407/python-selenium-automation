@@ -20,6 +20,10 @@
      context.driver.find_element(By.XPATH, "//button[@data-test='@web/Search/SearchButton']").click()
      sleep(5)  # wait for search results page to load
 
+@when('Add item to cart')
+def add_item(context):
+    context.driver.find_element(BY.CSS_Selector, "[data-test='chooseOptionsButton'.'chooseOptionsButton']").click()
+
 
  @when('Click on sign-in button')
      def sign_in_main(context):

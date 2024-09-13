@@ -3,7 +3,7 @@
  from time import sleep
 
 
- @then('Verify search results show {item}')
+ @then('Verify search results shown {item}')
  def verify_results(context, item):
      actual_result = context.driver.find_element(By.XPATH, "//div[@data-test='resultsHeading']").text
      assert item == actual_result, f'Expected {item}, got actual {actual_result}'

@@ -28,8 +28,7 @@ driver.find_element(By.XPATH, "//*[@aria-label='Target circle TM']").text
 
 
 #Verify Target has 10 benefits present (CSS Selector)
-driver.find_element(By.CSS_SELECTOR,"[data-test='filmstrip']")
-driver.find_element(By.CSS_SELECTOR,"[@class='sc-fb3945a7-1 coTiYO']")
+driver.find_elements(By.CSS_SELECTOR,"[data-test*='@web/SlingshotComponents/FilmstripWithStoryblocks']")
 
 
 
