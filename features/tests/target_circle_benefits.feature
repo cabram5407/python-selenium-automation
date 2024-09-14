@@ -4,4 +4,4 @@ Feature: Target Benefits
     Given Open Target Benefits page
     When Input {search_word} into search field
     When Click on search icon
-    Then Product results for {search_word} are shown
+    Then Verify 10 benefit links

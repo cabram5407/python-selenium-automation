@@ -7,6 +7,11 @@
  def open_main(context):
      context.driver.get('https://www.target.com/')
 
+@given('Open target benefits page')
+     def open_benefits(context):
+         context.driver.get('https://www.target.com/')
+         context.driver.get('https://www.target.com/circle')
+
 
  @when('Click on cart icon')
  def cart_icon(context):

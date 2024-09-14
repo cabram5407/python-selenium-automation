@@ -9,7 +9,7 @@
 
  @given('Open Target Benefits page')
  def open_benefits(context):
-     context.driver.get('https://www.target.com/')
+     context.driver.get('https://www.target.com/circle')
 
 
  @when('Input {search_word} into search field')
