@@ -38,11 +38,13 @@ driver.find_element(By.XPATH,"//a[@class='nav-a  ' and @href='/gp/bestsellers/?r
 driver.find_element(By.XPATH, "//a[text()='Best Sellers' and @class='nav-a   ']")
 
 #Wildcard search only the attribute or text, useful if you don't know tag value.
+driver.find_element(By.XPATH, "//*[@name='field-keywords']")
 driver.find_element(By.XPATH, "//*[@class=nav-a   ' and @href='gp/bestsellers/?ref_=nav_cs_bestsellers']")
 driver.find_element(By.XPATH, "//*[text()='Best Sellers' and @class='nav-a   ']")
 
-#Linking to a parent element and then child elements
+#Linking to a parent element that has an ID and then child element(s)
 driver.find_element(By.XPATH, "//div[@id='nav-main']//a[text()='Best Sellers']")
+driver.find_element(By.XPATH, "//div[@id='legalTextRow']//a[contains(@href, 'condition_of_use')]")
 
 #*******************************************************************************************
 #Homework 2 - Create Account Locators

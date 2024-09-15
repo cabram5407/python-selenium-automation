@@ -2,8 +2,13 @@
  from behave import given, when, then
  from time import sleep
 
+ @when('Confirm Add to Cart - Side Navigation')
+ def side_nav_click_add_to_cart(context):
+     context.driver.find_element(By.XPATH, "//*[@data-test='accountNav-signIn']").click()
+     sleep(3)
 
- @then('Verify search results show item')
+
+ @then('Verify search results show {item}')
  def verify_results(context, item):
      actual_result = context.driver.find_element(By.XPATH, "//div[@data-test='resultsHeading']").text
      assert item == actual_result, f'Expected {item}, got actual {actual_result}'

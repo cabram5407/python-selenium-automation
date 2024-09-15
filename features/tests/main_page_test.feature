@@ -22,7 +22,7 @@ Feature: Tests for main page user interface (UI)
 
   Scenario: Verify header has correct amount links
     Given Open Target main page
-    Then Verify header has 6 links
+    Then Verify header has {amount} links
 
    Scenario: Verify you've captured the correct amount links
     Given Open target benefits page

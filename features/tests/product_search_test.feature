@@ -28,5 +28,14 @@ Scenario Outline: User can search for product
 Scenario: User can verify sign-in form opened
     Given Open target main page
     When Click on sign-in button
-    When From side navigation, click sign-in
+    When Confirm Add to Cart - Side Navigation
     Then Verify sign-in form shown
+
+Scenario: User can add a product to cart
+    Given Open target main page
+    When Search for product
+    And Click on cart icon
+    And Add item to cart
+    And Confirm Add to Cart - Side Navigation
+    Then Verify search results show {item}
+    Then Verify cart has correct product

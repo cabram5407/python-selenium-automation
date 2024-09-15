@@ -6,10 +6,7 @@ Feature:  Cart functionality
      When Click on cart icon
      Then Verify Cart Empty message shown
 
-  Scenario: Click sign-in button
-     Given Click on sign-in button
-     When From side navigation, click sign-in
-     Then Verify sign-in button shown
+
 
   Scenario: Cart item present
       Given Search for {item}

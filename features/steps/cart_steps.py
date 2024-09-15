@@ -2,6 +2,7 @@ from selenium.webdriver.common.by import By
 from behave import given, when, then
 from time import sleep
 
+
 @then('Verify item in cart')
 def verify_cart_item(context):
     actual_result = context.driver.find_element(By.CSS_SELECTOR, "[data-test='cartItem-qty']").text
