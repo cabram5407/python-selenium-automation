@@ -21,7 +21,10 @@
  @when('Search for {item}')
  def search_product(context, item):
      context.driver.find_element(By.ID, 'search').send_keys(item)
-     # Search button => click
+
+
+ @when('Click search button')
+ def click_search(context):
      context.driver.find_element(By.XPATH, "//button[@data-test='@web/Search/SearchButton']").click()
      sleep(5)  # wait for search results page to load
 

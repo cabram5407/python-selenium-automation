@@ -5,6 +5,7 @@ Feature: Test for Target Search Functionality
 Scenario: User can search for a product
     Given Open target main page
     When Search for {item}
+    When Click search button
     Then 'Verify search results show item'
 
   Scenario: User can search for a product2

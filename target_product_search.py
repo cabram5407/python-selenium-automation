@@ -15,15 +15,34 @@ service = Service(driver_path)
 #starts the browser you are using
 driver: WebDriver = webdriver.Chrome(service=service)
 driver.maximize_window()
+#*********************************************************************************************
+#Target test case that opens Target.com, searches for product
+#*********************************************************************************************
 
-#Target test case that opens Target.com, clicks on cart icon and verify empty cart message
 driver.get('https://www.target.com/')
 
-#search for product
+#searches for product items
+driver.find_element(By.XPATH, "//input[@data-test='@web/Search/SearchInput']").send_keys('tea')
+
+#click search button to select product
 driver.find_element(By.XPATH, "//button[@data-test='@web/Search/SearchButton']").click()
 
-#Verify cart is empty
-driver.find_elements(By.CSS_SELECTOR, "[data-test*='@web/GlobalHeader/UtilityHeader/']")
-actual_result=driver.find_element(By.CSS_SELECTOR,"[data-test='boxEmptyMsg'] h1").text
+#verify product header shows searched item
+actual_result = driver.find_element(By.XPATH, "//div[@data-test='resultsHeading']").text
+expected_result = 'tea'
+assert expected_result in actual_result
+
+driver.quit()
+
+#*********************************************************************************************
+#Target test case that opens Target.com, verifies cart is empty
+#*********************************************************************************************
+driver.get('https://www.target.com/')
+
+#click on shopping cart
+driver.find_elements(By.XPATH, "//div[@data-test='@web/CartIcon' and @class='sc-e487bf3b-1 fSHTpu']").click()
+
+#verify cart is empty
+actual_result=driver.find_element(By.XPATH, "//h1[text()='Your cart is empty']").text
 expected_result = 'Your cart is empty'
 assert expected_result == actual_result, f'Expected {expected_result}, got {actual_result}'
