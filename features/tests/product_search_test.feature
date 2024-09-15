@@ -4,27 +4,27 @@ Feature: Test for Target Search Functionality
 
 Scenario: User can search for a product
     Given Open target main page
-    When Search for tea
-    Then Verify search results show tea
+    When Search for {item}
+    Then 'Verify search results show item'
 
   Scenario: User can search for a product2
     Given Open target main page
-    When Search for coffee
-    Then Verify search results show coffee
+    When Search for {item}
+    Then 'Verify search results show item'
 
 Scenario Outline: User can search for product
     Given Open target main page
-    When Search for <search_word>
+    When Search for <item>
     Then Verify correct search results shown for <search_result>
     Examples:
-    |search_word  |search_result |
+    |item         |search_result |
     |coffee       |coffee        |
     |tea          |tea           |
     |mug          |mug           |
     |sugar        |sugar         |
 
 
-    Scenario: User can verify sign-in form opened
+Scenario: User can verify sign-in form opened
     Given Open target main page
     When Click on sign-in button
     When From side navigation, click sign-in
