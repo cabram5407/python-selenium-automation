@@ -4,6 +4,15 @@ Feature: Tests for main page user interface (UI)
   #Given Open Target main page
   #Then verify header is shown
 
+
+  Scenario: Verify user can navigate to sign-in
+  #not common better to count links
+    Given Open Target main page
+    When Click on sign-in button
+    When From side navigation, click sign-in
+    Then Verify sign-in form shown
+
+
  Scenario: Verify Target header shown
   #not common better to count links
     Given Open Target main page

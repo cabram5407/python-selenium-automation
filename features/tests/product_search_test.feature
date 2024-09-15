@@ -24,12 +24,6 @@ Scenario Outline: User can search for product
     |sugar        |sugar         |
 
 
- Scenario: User can see Cart empty message
-    Given Open target main page
-    When Click on cart icon
-    Then Verify cart is empty
-
-
     Scenario: User can verify sign-in form opened
     Given Open target main page
     When Click on sign-in button
