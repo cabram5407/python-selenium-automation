@@ -22,5 +22,8 @@ driver.get('https://www.target.com/')
 #search for product
 driver.find_element(By.XPATH, "//button[@data-test='@web/Search/SearchButton']").click()
 
-#Verify search item shown
+#Verify cart is empty
 driver.find_elements(By.CSS_SELECTOR, "[data-test*='@web/GlobalHeader/UtilityHeader/']")
+actual_result=driver.find_element(By.CSS_SELECTOR,"[data-test='boxEmptyMsg'] h1").text
+expected_result = 'Your cart is empty'
+assert expected_result == actual_result, f'Expected {expected_result}, got {actual_result}'

@@ -32,7 +32,7 @@ driver.find_element(By.XPATH, "(//input[@placeholder='Search Amazon']")
 driver.find_element(By.XPATH, "//input[@name='field-keywords']")
 
 #Multiple attributes in any order to narrow the search:
-driver.find_element(By.XPATH,"//a[@class='nav-a  ' and @href='/gp/bestsellers/?ref_=nav_cs_bestsellers']")
+driver.find_element(By.XPATH,"//a[@class='nav-a  ' and @href='/gp/bestsellers/?ref_=nav_cs_bestsellers' and @tabindex='0']")
 
 #identifying with text and attribute
 driver.find_element(By.XPATH, "//a[text()='Best Sellers' and @class='nav-a   ']")
