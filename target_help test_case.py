@@ -21,7 +21,7 @@ driver.get('https://help.target.com/help')
 driver.get.find_element(By.CSS_SELECTOR, "[class='custom-h2']").click()
 
 #search input field
-driver.get.find_element(By.CSS_SELECTOR, "[id='j_id0:j_id2:j_id32:name']".click()
+driver.get.find_element(By.CSS_SELECTOR, "[id='j_id0:j_id2:j_id32:name']".send_keys()
 driver,get.find_element(By.CSS_SELECTOR, "[class='btn-sm search-btn']".click()
 
 #what would you like to do boxes (10)
