@@ -25,8 +25,8 @@ driver.get.find_element(By.CSS_SELECTOR, "[id='j_id0:j_id2:j_id32:name']".send_k
 driver,get.find_element(By.CSS_SELECTOR, "[class='btn-sm search-btn']".click()
 
 #what would you like to do boxes (10)
-driver.get.find.element(By.CSS_SELECTOR, "[class*='grid_6']").click()
-driver.get.find.element(BY.CSS_SELECTOR, "[class*='grid_4 boxSmallr txtAC bigbox2']").click()
+driver.get.find.elements(By.CSS_SELECTOR, "[class*='grid_6']").click()
+driver.get.find.elements(BY.CSS_SELECTOR, "[class*='grid_4 boxSmallr txtAC bigbox2']").click()
 
 #pruduct recalls and contact us
 driver.get.find.element(By.CSS_SELECTOR, "[class*='grid_6']").click()

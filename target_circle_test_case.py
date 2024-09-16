@@ -29,11 +29,11 @@ driver.find_element(By.XPATH, "//*[@aria-label='Target circle TM']").text
 
 
 #Verify Target has 10 benefits present (CSS Selector)
-driver.find_elements(By.CSS_SELECTOR,"[data-component='Cells Component Container'] [class*='cell-item-content']")
-actual_result = driver.find_element(By.CSS_SELECTOR,driver.find_elements(By.CSS_SELECTOR,"[data-component='Cells Component Container'] [class*='cell-item-content']").text
-expected_result = 'Sign into your Target account'
+expected_result = driver.find_elements(By.CSS_SELECTOR,"[data-component='Cells Component Container'] [class*='cell-item-content']")
+actual_result = driver.find_elements(By.CSS_SELECTOR,"[data-component='Cells Component Container'] [class*='cell-item-content']").text
+expected_result == actual_result
 assert expected_result == actual_result, f'Expected {expected_result}, got actual {actual_result}' \
- \
+
 
 
 

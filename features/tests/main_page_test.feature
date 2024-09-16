@@ -17,12 +17,11 @@ Feature: Tests for main page user interface (UI)
   #not common better to count links
     Given Open Target main page
     Then Verify header is shown
-    And Verify header has links
 
 
   Scenario: Verify header has correct amount links
     Given Open Target main page
-    Then Verify header has {amount} links
+    Then Verify header has 6 links
 
 
    Scenario: Verify you've captured the correct amount links

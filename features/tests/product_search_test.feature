@@ -17,13 +17,13 @@ Scenario: User can search for tea
 Scenario Outline: User can search for product
     Given Open target main page
     When Search for <search_word>
-    Then Verify search results show <search_result?>
+    Then Verify search results show <search_word>
     Examples:
-    |search_word  |search_result |
-    |coffee       |coffee        |
-    |tea          |tea           |
-    |mug          |mug           |
-    |sugar        |sugar         |
+    |search_word  |
+    |coffee       |
+    |tea          |
+    |mug          |
+    |sugar        |
 
 
 Scenario: User can verify sign-in form opened
