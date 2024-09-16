@@ -25,7 +25,7 @@
      def verify_benefit_links(context, amount):
          links = context.driver.find_element(By.CSS_SELECTOR.driver.find_elements(By.CSS_SELECTOR,"[data-component='Cells Component Container'] [class*='cell-item-content']").text
          expected_result = int(links)
-         assert expected_result == actual_result, f'Expected {expected_result}, got actual {actual_result}' \
+         assert len(expected_result) == expected_result, f'Expected {expected_result}, got actual {len(expected_result)}'
 
 
  @ then('Verify header has {amount} links')
