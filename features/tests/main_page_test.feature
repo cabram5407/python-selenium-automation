@@ -24,6 +24,7 @@ Feature: Tests for main page user interface (UI)
     Given Open Target main page
     Then Verify header has {amount} links
 
+
    Scenario: Verify you've captured the correct amount links
     Given Open target benefits page
     Then Verify 10 benefit links

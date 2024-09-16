@@ -18,7 +18,7 @@
      context.driver.find_element(By.CSS_SELECTOR, "[data-test='@web/CartIcon']").click()
 
 
- @when('Search for item')
+ @when('Search for {item}')
  def search_product(context, item):
      context.driver.find_element(By.ID, 'search').send_keys(item)
      context.driver.find_element(By.XPATH, "//button[@data-test='@web/Search/SearchButton']").click()

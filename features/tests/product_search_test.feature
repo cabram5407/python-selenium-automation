@@ -2,11 +2,16 @@
 
 Feature: Test for Target Search Functionality
 
-Scenario: User can search for a product
+Scenario: User can search for coffee
     Given Open target main page
-    When Search for {item}
-    When Click search button
-    Then 'Verify search results show item'
+    When Search for coffee
+    Then Verify search results show coffee
+
+
+Scenario: User can search for tea
+    Given Open target main page
+    When Search for tea
+    Then Verify search results show tea
 
 
 Scenario Outline: User can search for product
@@ -35,7 +40,6 @@ Scenario: User can add a product to cart
     And Add item to cart
     And Confirm Add to Cart - Side Navigation
     Then Verify search results show {item}
-    Then Verify cart has correct product
 
 
   Scenario: User can search for Target benefits

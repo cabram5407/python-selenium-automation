@@ -11,7 +11,8 @@
  @then('Verify search results show {item}')
  def verify_results(context, item):
      actual_result = context.driver.find_element(By.XPATH, "//div[@data-test='resultsHeading']").text
-     assert item == actual_result, f'Expected {item}, got actual {actual_result}'
+      assert item == actual_result, f'Expected {item}, got actual {actual_result}'
+
 
  @then('Verify sign-in form shown')
      def verify_sign_in_form(context):
