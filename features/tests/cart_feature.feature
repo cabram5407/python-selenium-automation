@@ -7,9 +7,8 @@ Feature:  Cart functionality
      Then Verify Cart Empty message shown
 
 
-
   Scenario: Cart item present
       Given Search for {item}
       When Add item to cart
       When Click on cart icon
-      Then Verify search results shown {item}
+      Then Verify search results show {item}

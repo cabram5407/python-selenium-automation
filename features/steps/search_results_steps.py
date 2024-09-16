@@ -25,7 +25,8 @@
          actual_result = context.driver.find_element(By.CSS_SELECTOR,driver.find_elements(By.CSS_SELECTOR,"[data-component='Cells Component Container'] [class*='cell-item-content']").text
          expected_result = 'Sign into your Target account'
          assert expected_result == actual_result, f'Expected {expected_result}, got actual {actual_result}' \
- \
+
+
  @ then('Verify header has {amount} links')
          def verify_header_links(context, amount):
              expected_amount = int(amount)

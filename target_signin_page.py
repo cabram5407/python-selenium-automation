@@ -29,5 +29,5 @@ assert expected == actual, f'Expected {expected}, did not match actual {actual}'
 #If you don't want to compare use
 driver.find_element(By.XPATH, "//span[text()='Sign into your Target account']")
 
-#Make sure login button is shown
+#Button verification logic
 driver.find_element(By.ID, 'login')

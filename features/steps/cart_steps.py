@@ -8,8 +8,9 @@ def verify_cart_item(context):
     actual_result = context.driver.find_element(By.CSS_SELECTOR, "[data-test='cartItem-qty']").text
     assert expected_result == actual_result, f'Expected {expected_result}, got {actual_result}'
 
-@then(' Verify Cart Empty message shown')
+
+@then('Verify Cart Empty message shown')
 def verify_cart_empty(context):
-    actual_result=context.driver.find_element(By.XPATH, "//h1[text()='Your cart is empty']").text
     expected_result = 'Your cart is empty'
+    actual_result=context.driver.find_element(By.XPATH, "//h1[text()='Your cart is empty']").text
     assert expected_result == actual_result, f'Expected {expected_result}, got {actual_result}'
