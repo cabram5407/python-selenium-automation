@@ -27,3 +27,9 @@ Feature: Tests for main page user interface (UI)
    Scenario: Verify you've captured the correct amount links
     Given Open target benefits page
     Then Verify 10 benefit links
+
+
+    #Target Help Test case
+  Scenario: User can verify Target Help UI
+    Given Open Target Help page
+    Then Verify UI elements present

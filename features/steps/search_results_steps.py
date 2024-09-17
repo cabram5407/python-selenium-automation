@@ -2,6 +2,7 @@
  from behave import given, when, then
  from time import sleep
 
+#Target product in cart test case
  @when('Confirm Add to Cart - Side Navigation')
  def side_nav_click_add_to_cart(context):
      context.driver.find_element(By.XPATH, "//*[@data-test='accountNav-signIn']").click()
@@ -20,7 +21,7 @@
          expected_result = 'Sign into your Target account'
          assert expected_result == actual_result, f'Expected {expected_result}, got actual {actual_result}'
 
-
+#Target circle test case
  @then('Verify 10 benefit links')
      def verify_benefit_links(context, amount):
          links = context.driver.find_element(By.CSS_SELECTOR.driver.find_elements(By.CSS_SELECTOR,"[data-component='Cells Component Container'] [class*='cell-item-content']").text
@@ -39,8 +40,8 @@
          def verify_header(context):
              context.driver.find_element(By.CSS_SELECTOR, "[class*='styles_utilityHeaderContainer']")
 
-
- @then('Verify header has links')
- def verify_header_links(context, links):
-     context.driver.find_elements(By.CSS_SELECTOR, "[data-test*='@web/GlobalHeader/UtilityHeader/']")
-     assert len(links) > 0
+#Verify Help UI elements present
+ @then('Verify UI elements present')
+ def verify_help_links(context, amount):
+    links = context.driver.get.find.elements(By.CSS_SELECTOR, "[class='col-lg-12']").click()
+     assert len(links) == int(amount), f'Expected {amount} links, got {len(links)}')

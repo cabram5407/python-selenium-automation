@@ -2,6 +2,7 @@
 
 Feature: Test for Target Search Functionality
 
+#Target product search
 Scenario: User can search for coffee
     Given Open target main page
     When Search for coffee
@@ -32,17 +33,18 @@ Scenario: User can verify sign-in form opened
     When Confirm Add to Cart - Side Navigation
     Then Verify sign-in form shown
 
-
+#Target product in the cart test case
 Scenario: User can add a product to cart
     Given Open target main page
     When Search for product
     And Click on cart icon
     And Add item to cart
-    And Confirm Add to Cart - Side Navigation
     Then Verify search results show {item}
 
-
+#Target Circle Test case
   Scenario: User can search for Target benefits
     Given Open Target Benefits page
     When Click on Target Benefits Tab
     Then Verify 10 benefit links
+
+

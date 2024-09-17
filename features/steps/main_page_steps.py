@@ -2,12 +2,16 @@
  from behave import given, when, then
  from time import sleep
 
+@given('Open Target Help page')
+def help_page(context):
+    context.driver.get('https://help.target.com/help')
+
 
  @given('Open target main page')
  def open_main(context):
      context.driver.get('https://www.target.com/')
 
-
+#Target Circle page
 @given('Open target Benefits page')
      def open_benefits(context):
          context.driver.get('https://www.target.com/circle')
@@ -17,7 +21,7 @@
  def click_cart(context):
      context.driver.find_element(By.CSS_SELECTOR, "[data-test='@web/CartIcon']").click()
 
-
+#Target product search test case
  @when('Search for {item}')
  def search_product(context, item):
      context.driver.find_element(By.ID, 'search').send_keys(item)
