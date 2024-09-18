@@ -47,4 +47,14 @@ Scenario: User can add a product to cart
     When Click on Target Benefits Tab
     Then Verify 10 benefit links
 
+  #Product names and images present
+  Scenario: Verify user can see product names and images
+    Given Open Target main page
+    When Search for AirPods (3rd Generation)
+    Then Verify product has name and image
 
+
+  #Product colors present
+  Scenario: User can see product colors
+    Given Open Target product A-54551690 page
+    Then Verify user can click through colors

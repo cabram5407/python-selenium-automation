@@ -4,7 +4,14 @@
 
 @given('Open Target Help page')
 def help_page(context):
-    context.driver.get('https://help.target.com/help')
+    # context.driver.get('https://help.target.com/help')
+    context.app.main_page.open_main()
+
+
+@given('Open Target product {product_id} page')
+def open_target(context, product_id):
+    context.driver.get(f'https://www.target.com/p/{product_id}
+    sleep(8)
 
 
  @given('Open target main page')
@@ -24,8 +31,9 @@ def help_page(context):
 #Target product search test case
  @when('Search for {item}')
  def search_product(context, item):
-     context.driver.find_element(By.ID, 'search').send_keys(item)
-     context.driver.find_element(By.XPATH, "//button[@data-test='@web/Search/SearchButton']").click()
+     # context.driver.find_element(By.ID, 'search').send_keys(item)
+     # context.driver.find_element(By.XPATH, "//button[@data-test='@web/Search/SearchButton']").click()
+     context.app.header.search_product(item)
 
 
  @when('Click search button')
