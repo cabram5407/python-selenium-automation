@@ -11,13 +11,11 @@ class SearchResultsPage(Page):
     def verify_results(self, item)
         self.verify_partial_text(item, *self.SEARCH_RESULTS_HEADER)
 
-
     def verify_results_url(self, item):
         self.verify_partial_url(item)
 
     def sign_in_form(self):
         self.verify_sign_in_page(*self.SIGN_IN_FORM_OPEN)
-
 
    def empty_cart(self):
         expected_result = 'Your cart is empty'
