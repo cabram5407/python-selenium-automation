@@ -16,7 +16,7 @@ def open_target(context, product_id):
 
  @given('Open target main page')
  def open_main(context):
-     context.driver.get('https://www.target.com/')
+     context.app.main_page.open_main()
 
 #Target Circle page
 @given('Open target Benefits page')
@@ -26,7 +26,8 @@ def open_target(context, product_id):
 
  @when('Click on cart icon')
  def click_cart(context):
-     context.driver.find_element(By.CSS_SELECTOR, "[data-test='@web/CartIcon']").click()
+     context.app.header.click_cart()
+
 
 #Target product search test case
  @when('Search for {item}')
@@ -60,6 +61,10 @@ def add_item(context):
  @when('Click on Target Benefits Tab')
  def search_word(context):
          context.driver.find_element(By.CSS_SELECTOR, "#utilityNav-circle").click()
+
+ @when('Verify sign-in form shown')
+ def verify_sign_in_form(context):
+     context.driver.find_elementBy.CSS_SELECTOR, "[class='sc-fe064f5c-0 sc-315b8ab9-2 WObnm gClYfs']").text
 
 
 

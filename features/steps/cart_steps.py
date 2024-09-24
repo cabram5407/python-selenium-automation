@@ -10,7 +10,5 @@ def verify_cart_item(context):
 
 
 @then('Verify Cart Empty message shown')
-def verify_cart_empty(context):
-    expected_result = 'Your cart is empty'
-    actual_result=context.driver.find_element(By.XPATH, "//h1[text()='Your cart is empty']").text
-    assert expected_result == actual_result, f'Expected {expected_result}, got {actual_result}'
+def verify_empty_cart(context):
+    context.app.cart_page.verify_empty_cart()

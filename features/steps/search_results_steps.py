@@ -12,6 +12,19 @@ PRODUCT_IMG = (By.CSS_SELECTOR, 'img')
 COLOR_OPTIONS = (By.CSS_SELECTOR, "div[aria-label='Carosel'] li img")
 SELECTED_COLOR = (By.CSS_SELECTOR, "data-test='@web/VariationComponent'] div")
 
+@when('Click on Add to Cart Button')
+def click_add_to_cart_button(context):
+    context.driver.find_element(*ADD_TO_CART_BTN).click()
+    context.driver.wait.until(
+        EC.visibility_of_element_located(SIDE_NAV_PRODUCT_NAME),
+        message= 'Side navigation product name is not visible'
+    )
+
+@when('Store product name')
+def store_product_name(context):
+    context.product_name = context.driver.find_element(*PRODUCT_TITLE).text
+    print(f'Product stored: {context.product_name}')
+
 #Target product in cart test case
  @when('Confirm Add to Cart - Side Navigation')
  def side_nav_click_add_to_cart(context):
@@ -25,12 +38,17 @@ SELECTED_COLOR = (By.CSS_SELECTOR, "data-test='@web/VariationComponent'] div")
      # assert item == actual_result, f'Expected {item}, got actual {actual_result}'
      context.app.search_results_page.verify_results(item)
 
+@then('Verify product {item} in URL')
+def verify_results_url(context, item):
+    context.app.search_results_page.verify_results_url(item)
+
 
  @then('Verify sign-in form shown')
      def verify_sign_in_form(context):
          actual_result = context.driver.find_element(By.XPATH, "//span[text()='Sign into your Target account']").text
          expected_result = 'Sign into your Target account'
          assert expected_result == actual_result, f'Expected {expected_result}, got actual {actual_result}'
+
 
 #Target circle test case
 @then('Verify 10 benefit links')
@@ -51,6 +69,7 @@ SELECTED_COLOR = (By.CSS_SELECTOR, "data-test='@web/VariationComponent'] div")
          def verify_header(context):
              context.driver.find_element(By.CSS_SELECTOR, "[class*='styles_utilityHeaderContainer']")
 
+
 #Verify Help UI elements present
  @then('Verify UI elements present')
  def verify_help_links(context, amount):
@@ -70,6 +89,7 @@ SELECTED_COLOR = (By.CSS_SELECTOR, "data-test='@web/VariationComponent'] div")
          title = product.find_element(*PRODUCT_TITLE).text
          assert title, 'Product title not shown'
          product.find_element(*PRODUCT_IMG)
+
 
  @then('Verify user can click through colors')
  def click_and_verif_colors(context):

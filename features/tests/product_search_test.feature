@@ -7,6 +7,7 @@ Scenario: User can search for coffee
     Given Open target main page
     When Search for coffee
     Then Verify search results show coffee
+    Then Verify product coffee in URL
 
 
 Scenario: User can search for tea
