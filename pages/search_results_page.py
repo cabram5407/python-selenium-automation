@@ -8,6 +8,7 @@ class SearchResultsPage(Page):
     EMPTY_CART_HEADER = (By.XPATH, "//div[@data-test='boxEmptyMsg']")
     SIGN_IN_FORM_OPEN = (By.CSS_SELECTOR, "[class='sc-fe064f5c-0 sc-315b8ab9-2 WObnm gClYfs']")
 
+
     def verify_results(self, item)
         self.verify_partial_text(item, *self.SEARCH_RESULTS_HEADER)
 
