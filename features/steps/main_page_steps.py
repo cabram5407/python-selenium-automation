@@ -58,7 +58,7 @@ def add_item(context):
 
  @when('Verify sign-in form shown')
  def verify_sign_in_form(context):
-     context.driver.find_elementBy.CSS_SELECTOR, "[class='sc-fe064f5c-0 sc-315b8ab9-2 WObnm gClYfs']").text
+     context.driver.find_element(By.CSS_SELECTOR, "[class='sc-fe064f5c-0 sc-315b8ab9-2 WObnm gClYfs']").text
 
 
 

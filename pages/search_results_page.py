@@ -18,8 +18,6 @@ class SearchResultsPage(Page):
 
     def verify_favorites(self):
         self.wait_for_element_to_appear(*self.FAV_TOOLTIP)
-    # EMPTY_CART_HEADER = (By.XPATH, "//div[@data-test='boxEmptyMsg']")
-    # SIGN_IN_FORM_OPEN = (By.CSS_SELECTOR, "[class='sc-fe064f5c-0 sc-315b8ab9-2 WObnm gClYfs']")
 
 
     def verify_results(self, item)
