@@ -55,6 +55,12 @@ Scenario: User can add a product to cart
     Then Verify product has name and image
 
 
+    Scenario: User can see favorites tooltip for search results
+    Given Open Target main page
+    When Search for tea
+    And Hover favorites icon
+    Then Favorites tooltip is shown
+
   #Product colors present
   Scenario: User can see product colors
     Given Open Target product A-54551690 page

@@ -30,6 +30,17 @@ def store_product_name(context):
  def side_nav_click_add_to_cart(context):
      context.driver.find_element(By.XPATH, "//*[@data-test='accountNav-signIn']").click()
      context.driver.wait.until(EC.visibility_of_element_located(SIDE_NAV_PRODUCT_NAME))
+     sleep(5)
+
+
+@when('Hover favorites icon')
+def hover_favorites(context):
+    context.app.search_results_page.hover_favorites()
+
+
+@then('Favorites tooltip is shown')
+def verify_favorites(context):
+    context.app.search_results_page.verify_favorites()
 
 
  @then('Verify search results show {item}')

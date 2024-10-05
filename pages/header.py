@@ -13,7 +13,7 @@ class Header(Page):
 def search_product(self, product):
         self.input_text(product, *self.SEARCH_FIELD)
         self.click(*self.SEARCH_BTN)
-        sleep(6)
+        sleep(8)
 
 def click_cart(self):
     # self.wait_to_be_clickable(*self.CART_BTN)

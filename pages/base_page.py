@@ -2,6 +2,8 @@
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
 
+from pages.base_page import Page
+
 class Page:
 
     def __init__(self, driver):
@@ -79,12 +81,12 @@ class Page:
 
     def verify_text(self, *locator, expected_text):
         actual_text = self.find_element(*locator).text
-        assert actual_text == expected_text. f'Expected {expected_text}, did not match {actual_text}'
+        assert actual_text == expected_text, f'Expected {expected_text}, did not match {actual_text}'
 
 
     def verify_partial_text(self, *locator, expected_text):
         actual_text = self.find_element(*locator).text
-        assert expected_text in actual_text expected_text. f'Expected {expected_text}, not found in actual {actual_text}'
+        assert expected_text in actual_text, f'Expected {expected_text}, not found in actual {actual_text}'
 
 
     def verify_url(self, expected_url):

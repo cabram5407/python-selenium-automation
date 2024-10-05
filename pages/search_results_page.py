@@ -1,12 +1,25 @@
 from selenium.webdriver.common.by import By
 from pages.base_page import Page
 
+from selenium.webdriver.common.action_chains import ActionChains
 
 #Class pages use "camel case" naming convention, no underscore '_'
 class SearchResultsPage(Page):
     SEARCH_RESULTS_HEADER = (By.XPATH, "//div[@data-test='resultsHeading']")
-    EMPTY_CART_HEADER = (By.XPATH, "//div[@data-test='boxEmptyMsg']")
-    SIGN_IN_FORM_OPEN = (By.CSS_SELECTOR, "[class='sc-fe064f5c-0 sc-315b8ab9-2 WObnm gClYfs']")
+    HEART_ICON = (By.CSS_SELECTOR, "[data-test='FavoritesButton']")
+    FAV_TOOLTIP = (By.XPATH, "//*[contains(text(), 'Click to sign in and save')]")
+
+    def hover_favorites(self):
+        heart_icon = self.find_element(*self.HEART_ICON)
+
+        actions = ActionChains(self.driver)
+        actions.move_to_element(heart_icon)
+        actions.perform()
+
+    def verify_favorites(self):
+        self.wait_for_element_to_appear(*self.FAV_TOOLTIP)
+    # EMPTY_CART_HEADER = (By.XPATH, "//div[@data-test='boxEmptyMsg']")
+    # SIGN_IN_FORM_OPEN = (By.CSS_SELECTOR, "[class='sc-fe064f5c-0 sc-315b8ab9-2 WObnm gClYfs']")
 
 
     def verify_results(self, item)
