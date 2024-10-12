@@ -2,7 +2,9 @@
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
 
-from pages.base_page import Page
+
+from support.logger import logger
+
 
 class Page:
 
@@ -12,14 +14,17 @@ class Page:
 
 
     def open(self, url):
+        logger.info(f'Opening page {url}')
         self.driver.get(url)
 
 
     def find_element(self, *locator):
+        logger.info(f'Searching for element by {locator}')
         return self.driver.find_element(*locator)
 
 
     def find_elements(self, *locator):
+        logger.info(f'Searching for elements by {locator}')
         return self.driver.find_elements(*locator)
 
 
@@ -28,10 +33,12 @@ class Page:
 
 
     def click(self, *locator):
+        logger.info(f'Clicking on element {locator}')
         self.driver.find_element(*locator).click()
 
 
     def input_text(self, *locator, text):
+        logger.info(f'Inputting text for element {locator}')
         self.driver.find_element(*locator).send_keys(text)
 
 
