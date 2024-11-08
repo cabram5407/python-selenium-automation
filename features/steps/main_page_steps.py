@@ -1,67 +1,21 @@
- from selenium.webdriver.common.by import By
- from behave import given, when, then
- from time import sleep
+from selenium.webdriver.common.by import By
+from behave import given, when, then
+from time import sleep
 
-@given('Open Target Help page')
-def help_page(context):
-    # context.driver.get('https://help.target.com/help')
-    context.app.main_page.open_main()
-
-
-@given('Open Target product {product_id} page')
-def open_target(context, product_id):
-    context.driver.get(f'https://www.target.com/p/{product_id}
-    sleep(8)
+EMAIL = (By.CSS_SELECTOR, "input#email-2.input.w-input")
+PSWD = (By.CSS_SELECTOR, "input#password-2.input.w-input")
+LOGIN_BTN = (By.CSS_SELECTOR, "a.login-button.w-button")
 
 
- @given('Open target main page')
- def open_main(context):
-     context.app.main_page.open_main()
-
-#Target Circle page
-@given('Open target Benefits page')
-     def open_benefits(context):
-         context.driver.get('https://www.target.com/circle')
+@given('Open the main page')
+def open_reelly_page(context):
+    context.driver.get('https://soft.reelly.io')
 
 
- @when('Click on cart icon')
- def click_cart(context):
-     context.app.header.click_cart()
-
-#Target product search test case
- @when('Search for {item}')
- def search_product(context, item):
-     # context.driver.find_element(By.ID, 'search').send_keys(item)
-     # context.driver.find_element(By.XPATH, "//button[@data-test='@web/Search/SearchButton']").click()
-     context.app.header.search_product(item)
-
-@when('Click search button')
- def click_search(context):
-     context.driver.find_element(By.XPATH, "//button[@data-test='@web/Search/SearchButton']").click()
-     sleep(5)  # wait for search results page to load
-
-@when('Add item to cart')
-def add_item(context):
-    context.driver.find_element(BY.CSS_Selector, "[data-test='chooseOptionsButton'.'chooseOptionsButton']").click()
-
-@when('Click on sign-in button')
-     def sign_in_main(context):
-         context.driver.find_element(By.XPATH, "//span[text()='Sign in']").click()
-
-@when('From side navigation, click sign-in')
-     def sign_in_side(context):
-         context.driver.find_element(By.XPATH, "//a[@data-test='accountNav-signIn']").click()
-
-@when('Click on Target Benefits Tab')
- def search_word(context):
-         context.driver.find_element(By.CSS_SELECTOR, "#utilityNav-circle").click()
-
- @when('Verify sign-in form shown')
- def verify_sign_in_form(context):
-     context.driver.find_element(By.CSS_SELECTOR, "[class='sc-fe064f5c-0 sc-315b8ab9-2 WObnm gClYfs']").text
-
-
-
-
+@when('Log in to the page')
+def click_login_button(context, *LOGIN_BTN, EMAIL, PSWD, text):
+         context.driver.input_text(EMAIL).send_keys(text)
+         context.driver.input_text(PSWD).send_keys(text)
+         context.driver.wait_to_be_clickable_click(LOGIN_BTN).click()
 
 
